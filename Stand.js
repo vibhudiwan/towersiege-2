@@ -3,17 +3,18 @@ class Stand{
         var options = {
             isStatic:true
         }
-        this.body = Bodies.rectangle(x, y, width, height, options);
+        this.stand = Bodies.rectangle(x, y, width, height, options);
         this.width = width;
         this.height = height;
-        World.add(world, this.body);
+        World.add(world, this.stand);
       }
       display(){
-        var angle = this.body.angle;
+        var angle = this.stand.angle;
         push();
-        translate(this.body.position.x, this.body.position.y);
+        translate(this.stand.position.x, this.stand.position.y);
         rotate(angle);
         rectMode(CENTER);
+        noStroke();
         rect(0,0,this.width, this.height);
         pop();
       }
